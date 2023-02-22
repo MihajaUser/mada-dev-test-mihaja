@@ -1,4 +1,4 @@
-# mada-dev-test by RANDRIANARISOA Lalatiana Mihaja Antonio
+# mada-dev-test by Mihaja Antonio
 # 1)  npm install --force
 
 # 2) config kely
