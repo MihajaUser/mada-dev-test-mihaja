@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    hello, hyrule
+    hello, hyrule mihaja
   </div>
 </template>
 
