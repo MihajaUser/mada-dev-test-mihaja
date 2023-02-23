@@ -13,5 +13,4 @@ public class BackendmadadevApplication {
 		SpringApplication.run(BackendmadadevApplication.class, args);
 		System.out.print(" mihaja app start be");
 	}
-
 }
