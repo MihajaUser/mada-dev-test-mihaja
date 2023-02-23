@@ -24,7 +24,9 @@
             <tbody>
                 <tr v-for="item in products" :key="item.id" class="active-row">
                     <td>{{ item.name }}</td>
-                    <td>{{ item.price }} Ar</td>
+                    <td>
+                        {{item.price% 3 === 0 && item.price % 5 === 0 ? 'FluzzGratz' : item.price % 3 === 0 ? 'Fluzz' : item.price % 5 === 0 ? 'Gratz' : item.price }}
+                    </td>
                     <td>{{ item.description }}</td>
                     <td>
                         <div style="float:left">
@@ -149,8 +151,9 @@ export default defineComponent({
     border-radius: 15px;
     background-color: #e03838d0;
 }
-input{
-  border-radius: 7px;
-  margin-left: 20px;
+
+input {
+    border-radius: 7px;
+    margin-left: 20px;
 }
 </style>
