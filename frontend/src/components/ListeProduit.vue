@@ -1,6 +1,5 @@
 <template>
     <div class="app">
-      
         <h2>Créer une nouveau produit</h2>
         <br />
         <form @submit.prevent="formCreation">
@@ -10,7 +9,7 @@
             <input type="text" id="price" name="price" v-model="price" required />
             <label for="description">Description :</label>
             <input id="description" name="description" v-model="description" />
-            <button type="submit">Créer</button>
+            <button class="buttonSuccess" type="submit">Créer</button>
         </form>
         <h2>Liste des produits</h2>
         <table class="styled-table">
@@ -28,12 +27,17 @@
                     <td>{{ item.price }} Ar</td>
                     <td>{{ item.description }}</td>
                     <td>
-                        <form @submit.prevent="formUpdate(item.id, item.name, item.price, item.description)">
-                            <button>Editer</button>
-                        </form>
-                        <form @submit.prevent="formDelete(item.id)">
-                            <button>Supprimer</button>
-                        </form>
+                        <div style="float:left">
+                            <form @submit.prevent="formUpdate(item.id, item.name, item.price, item.description)">
+                                <button class="buttonUpdate">Editer</button>
+                            </form>
+
+                        </div>
+                        <div style="float:right">
+                            <form @submit.prevent="formDelete(item.id)">
+                                <button class="buttonDelete">Supprimer</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -42,6 +46,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import { BButton } from 'bootstrap-vue';
 import {
     getProduct,
     createProduct,
@@ -84,7 +89,7 @@ export default defineComponent({
         },
         formUpdate(id: string, name: string, price: string, description: string) {
             console.log(id)
-            window.location.href = "/updateproduct/"+id+"/"+name+"/"+price+"/"+description;
+            window.location.href = "/updateproduct/" + id + "/" + name + "/" + price + "/" + description;
         }
     },
 });
@@ -125,5 +130,27 @@ export default defineComponent({
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+}
+
+.buttonSuccess {
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: #07b394;
+}
+
+.buttonUpdate {
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: #ffd700;
+}
+
+.buttonDelete {
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: #e03838d0;
+}
+input{
+  border-radius: 7px;
+  margin-left: 20px;
 }
 </style>

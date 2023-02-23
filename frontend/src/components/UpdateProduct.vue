@@ -1,5 +1,6 @@
 <template>
-  <h1>update</h1>
+  <h1>Modification produit</h1>
+  <br />
   <form @submit.prevent="formUpdate">
     <label for="name">Name :</label>
     <input type="text" id="price" name="price" v-model="name" required />
@@ -7,7 +8,7 @@
     <input type="text" id="price" name="price" v-model="price" required />
     <label for="description">Description :</label>
     <input id="description" name="description" v-model="description" />
-    <button type="submit">Modifier</button>
+    <button type="submit" class="buttonUpdate">Modifier</button>
   </form>
 </template>
 
@@ -35,7 +36,7 @@ export default defineComponent({
   methods: {
     async formUpdate() {
       try {
-        await updateProduct(this.id,this.name, this.price, this.description);
+        await updateProduct(this.id, this.name, this.price, this.description);
       } catch (error) {
         console.log(error);
       }
@@ -43,5 +44,16 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.buttonUpdate {
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: #887f7f;
+}
+input{
+  border-radius: 7px;
+  margin-left: 20px;
+}
+</style>
 
  
