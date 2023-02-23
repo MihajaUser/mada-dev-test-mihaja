@@ -1,7 +1,8 @@
 <template>
     <div class="app">
-        <h1>CRUD Produit test Mada dev</h1>
+      
         <h2>Créer une nouveau produit</h2>
+        <br />
         <form @submit.prevent="formCreation">
             <label for="name">Name :</label>
             <input type="text" id="price" name="price" v-model="name" required />

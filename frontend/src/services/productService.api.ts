@@ -14,7 +14,7 @@ export async function createProduct(name: any, price: any, description: any) {
       price: price,
       description: description,
     });
-    window.location.href = "/product";
+    window.location.href = "/";
   } catch (error) {
     console.log(error);
   }
@@ -23,11 +23,12 @@ export async function createProduct(name: any, price: any, description: any) {
 export async function deleteProduct(id: string) {
   try {
     const data = await axios.delete("http://localhost:8080/products/" + id);
-    window.location.href = "/product";
+    window.location.href = "/";
   } catch (error) {
     console.log(error);
   }
 }
+
 export async function updateProduct(
   id: any,
   name: any,
@@ -45,7 +46,7 @@ export async function updateProduct(
       price: price,
       description: description,
     });
-    window.location.href = "/product";
+    window.location.href = "/";
   } catch (error) {
     console.log(error);
   }

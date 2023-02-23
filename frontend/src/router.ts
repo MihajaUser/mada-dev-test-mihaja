@@ -5,17 +5,6 @@ import component from "./shims-vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    alias: "/tutorials",
-    name: "tutorials",
-    component: () => import("./components/TutorialsList.vue"),
-  },
-  {
-    path: "/tutorials/:id",
-    name: "tutorial-details",
-    component: () => import("./components/TutorialDetails.vue"),
-  },
-  {
-    path: "/product",
     name: "product",
     component: () => import("./components/ListeProduit.vue"),
   },
