@@ -23,7 +23,7 @@ import com.app.service.ProductService;
 public class ProductController {
 
 	@Autowired
-	private ProductService service;
+	private ProductService service; 
 	
 	@GetMapping("/welcome")
 	 public String welcome() {

@@ -21,7 +21,7 @@ public class ProductService {
 	}
 	
 	public List<Product> findAllProducts(){
-		return repository.findAll();
+		return repository.findAll(); 
 	}
 	
 	public Product getProductById(String id) {

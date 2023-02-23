@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 public class Product {
 	@Id
-	private String id;
+	private String id; 
 	private String name;
 	private float price;
 	private String description;
